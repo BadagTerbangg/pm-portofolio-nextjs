@@ -259,3 +259,64 @@ hr {
     color: var(--muted);
     border-top: 1px solid var(--glass);
 }
+
+
+/* --- 9. MEDIA QUERIES (RESPONSIVITAS MOBILE FIX) --- */
+
+/* Tablet dan Layar Laptop Kecil */
+@media (max-width: 950px) {
+    
+    /* Hero Section berubah menjadi tumpukan vertikal */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 60px 0 40px 0; /* Kurangi padding atas/bawah */
+    }
+    
+    .hero-left, .hero-right {
+        flex-basis: 100%; 
+    }
+
+    .hero-right {
+        order: -1; /* Pindahkan foto ke atas */
+    }
+
+    /* Ukuran font H1 diperkecil */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Sembunyikan Navigasi Utama di HP */
+    .nav {
+        display: none; 
+    }
+
+    .header-inner {
+        justify-content: center; /* Brand di tengah */
+    }
+}
+
+/* Mobile Phone (Layar Sangat Kecil, misal di bawah 600px) */
+@media (max-width: 600px) {
+    
+    .container {
+        padding: 0 15px; /* Padding sisi lebih kecil */
+    }
+
+    .projects-grid {
+        /* Memastikan kartu proyek tetap 1 kolom */
+        grid-template-columns: 1fr; 
+    }
+
+    .photo-frame {
+        width: 250px;
+        height: 250px;
+        /* Kurangi border untuk tampilan lebih ringkas */
+        border: 2px solid var(--surface);
+    }
+
+    .btn-group {
+        flex-direction: column; /* Tombol jadi tumpukan vertikal */
+    }
+}
