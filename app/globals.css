@@ -1,0 +1,261 @@
+/* app/globals.css */
+
+/* --- 1. Import Font Modern (Google Fonts) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+
+/* --- 2. VARIABEL WARNA (SOFT DARK MINIMALIST) --- */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+    --background: #111827;
+    --surface: #1f2937;
+    --card-bg: #1c2333;
+    --text: #ffffff;
+    --muted: #9ca3af;
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --glass: #37415140;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --primary-shadow: rgba(59, 130, 246, 0.25); 
+}
+
+/* --- 3. GLOBAL BASE STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; 
+    scroll-padding-top: 90px; 
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    font-weight: 800;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--glass);
+    margin: 60px 0;
+}
+
+/* --- 4. BUTTONS & ACTIONS --- */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn, .btn-outline {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-block; 
+}
+
+.btn {
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    color: var(--text);
+    box-shadow: 0 4px 10px var(--primary-shadow);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--muted);
+    color: var(--muted);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); 
+    background-color: transparent;
+}
+
+
+/* --- 5. HEADER STYLES (ALIGNMENT FIXED) --- */
+.site-header {
+    background-color: var(--background);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--glass);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-inner {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.brand {
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+}
+
+.brand .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.brand .tag {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.nav a {
+    margin-left: 25px; 
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a.active, .nav a:hover {
+    color: var(--primary);
+}
+
+
+/* --- 6. HERO SECTION --- */
+.hero {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0 60px 0;
+    gap: 50px; 
+}
+
+.hero-left {
+    flex-basis: 55%;
+}
+
+.hero-right {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero .tag {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 5px; 
+    border-bottom: 2px solid var(--primary); 
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.photo-frame {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--surface);
+    box-shadow: 0 0 0 8px var(--card-bg), 0 8px 20px var(--shadow-color);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* --- 7. PROJECT SECTION (KARTU SAMA RATA) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    
+    display: flex; 
+    flex-direction: column; 
+    min-height: 380px; 
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.project-card .card-content {
+    flex-grow: 1; /* Kunci: Konten mengisi ruang sisa */
+    margin-bottom: 20px;
+}
+
+/* KUNCI FIX: Membuat tinggi visual konten deskripsi sama di semua kartu */
+.project-card .description-text {
+    min-height: 120px; 
+    overflow: hidden; 
+    /* Properti untuk membatasi baris (Opsional) */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+}
+
+.project-card:hover {
+    border: 1px solid var(--primary);
+    transform: translateY(-5px);
+}
+
+.project-card .card-btn {
+    margin-top: auto; /* Memastikan tombol menempel di bawah */
+}
+
+
+/* --- 8. FOOTER STYLES --- */
+.site-footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-top: 1px solid var(--glass);
+}
