@@ -2,13 +2,12 @@
 
 /* --- 1. Import Font Modern (Google Fonts) --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
-/* Saya tambahkan 700 dan 800 di Inter */
 
 
 /* --- 2. VARIABEL WARNA (SOFT DARK MINIMALIST) --- */
 :root {
-    /* Perubahan: Font Primer diganti menjadi Inter */
-    --font-primary: 'Inter', sans-serif; 
+    /* Font Primer dikembalikan ke Poppins (untuk Bold Look) */
+    --font-primary: 'Poppins', sans-serif; 
     --font-secondary: 'Inter', sans-serif;
     --background: #111827;
     --surface: #1f2937;
@@ -49,8 +48,8 @@ body {
 
 h1, h2, h3 {
     font-family: var(--font-primary);
-    /* Perubahan: Font Weight disetel ke 700 */
-    font-weight: 700; 
+    /* Font Weight disetel ke 800 (BOLD) */
+    font-weight: 800; 
 }
 
 a {
@@ -161,20 +160,20 @@ hr {
     display: flex; 
     align-items: center;
     justify-content: space-between;
-    /* Perubahan: Padding atas/bawah ditingkatkan */
+    /* Padding vertikal tinggi */
     padding: 100px 0 80px 0; 
-    /* Perubahan: Jarak antar kolom lebih lebar */
+    /* Jarak antar kolom lebih lebar */
     gap: 70px; 
 }
 
 .hero-left {
-    /* Perubahan: 50% untuk simetri */
-    flex-basis: 50%;
+    /* 70% untuk dominasi teks (Gaya Figma) */
+    flex-basis: 70%;
 }
 
 .hero-right {
-    /* Perubahan: 50% untuk simetri */
-    flex-basis: 50%;
+    /* 30% untuk foto */
+    flex-basis: 30%;
     display: flex;
     justify-content: center;
 }
@@ -191,17 +190,18 @@ hr {
 }
 
 .hero h1 {
-    /* Perubahan: Judul sedikit dikecilkan, line-height diatur */
-    font-size: 3.2rem;
-    line-height: 1.2;
+    /* Ukuran font ditingkatkan untuk Bold Look */
+    font-size: 3.8rem;
+    /* Jarak baris dirapatkan */
+    line-height: 1.1;
     margin-top: 15px; 
     margin-bottom: 30px; 
 }
 
 .photo-frame {
-    /* Perubahan: Ukuran foto sedikit dikecilkan */
-    width: 320px; 
-    height: 320px;
+    /* Ukuran foto sedikit dikecilkan untuk porsi 30% */
+    width: 280px; 
+    height: 280px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--surface);
@@ -271,6 +271,7 @@ hr {
 
 
 /* --- 9. MEDIA QUERIES (RESPONSIVITAS MOBILE FIX) --- */
+/* (Bagian ini tidak diubah dan tetap menjaga responsivitas HP) */
 
 /* Tablet dan Layar Laptop Kecil */
 @media (max-width: 950px) {
